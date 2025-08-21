@@ -63,6 +63,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    /**
+     * Manipula navegação por teclado nas tabs
+     * @param {KeyboardEvent} e - Evento de teclado
+     */
+    function handleKeyboardNavigation(e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            const isTabPacienteActive = tabPaciente.classList.contains('active');
+
+            if (e.key === 'ArrowLeft' && !isTabPacienteActive) {
+                ativarTabPaciente();
+                tabPaciente.focus();
+            } else if (e.key === 'ArrowRight' && isTabPacienteActive) {
+                ativarTabFuncionario();
+                tabFuncionario.focus();
+            }
+        }
+    }
+
     // Event listeners das tabs
     tabPaciente.addEventListener('click', function (e) {
         e.preventDefault();
