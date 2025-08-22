@@ -4,25 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Login - Clínica Médica</title>
+    <title>Login</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">COMP</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand">
+                <img src="/imagens/logo1.png" alt="Logo Comp" width="75" height="75">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
                     <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link" href="#">Galerias</a>
+                    <a class="nav-link" href="galeria.html">Galerias</a>
                     <a class="nav-link" href="agendamentos.html">Agendamentos</a>
-                    <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                </div>
+                
+                <div class="navbar-nav">
+                    <a id="login-link" class="nav-link" href="login.html">Login</a>
                 </div>
             </div>
         </div>
@@ -35,7 +43,6 @@
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Acesso ao Sistema</h2>
 
-                        <!-- Tabs para escolher tipo de usuário -->
                         <ul class="nav nav-tabs mb-4" id="userTypeTabs" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="paciente-tab" data-bs-toggle="tab"
@@ -50,7 +57,6 @@
                         </ul>
 
                         <div class="tab-content" id="userTypeContent">
-                            <!-- Login Paciente -->
                             <div class="tab-pane fade show active" id="paciente-pane" role="tabpanel"
                                 aria-labelledby="paciente-tab">
                                 <form id="loginPacienteForm">
@@ -64,14 +70,13 @@
                                     </div>
                                     <div class="d-grid gap-2">
                                         <button type="submit" class="btn btn-primary">Entrar</button>
-                                        <a href="cadastro-paciente.html" class="btn btn-outline-secondary">
+                                        <a href="/restrito/cadastro-pacientes.html" class="btn btn-outline-secondary">
                                             Criar Conta de Paciente
                                         </a>
                                     </div>
                                 </form>
                             </div>
 
-                            <!-- Login Funcionário -->
                             <div class="tab-pane fade" id="funcionario-pane" role="tabpanel"
                                 aria-labelledby="funcionario-tab">
                                 <form id="loginFuncionarioForm">
@@ -119,63 +124,8 @@
     </footer>
 
 
-    <script>
-        // Script simples para alternar entre tabs de login
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // Seleciona os botões das tabs
-            const tabPaciente = document.getElementById('paciente-tab');
-            const tabFuncionario = document.getElementById('funcionario-tab');
-
-            // Seleciona os painéis de conteúdo
-            const painelPaciente = document.getElementById('paciente-pane');
-            const painelFuncionario = document.getElementById('funcionario-pane');
-
-            // Função para ativar tab do paciente
-            function ativarTabPaciente() {
-                // Remove classes ativas do funcionário
-                tabFuncionario.classList.remove('active');
-                painelFuncionario.classList.remove('show', 'active');
-
-                // Adiciona classes ativas ao paciente
-                tabPaciente.classList.add('active');
-                painelPaciente.classList.add('show', 'active');
-
-                // Atualiza atributos ARIA
-                tabPaciente.setAttribute('aria-selected', 'true');
-                tabFuncionario.setAttribute('aria-selected', 'false');
-            }
-
-            // Função para ativar tab do funcionário
-            function ativarTabFuncionario() {
-                // Remove classes ativas do paciente
-                tabPaciente.classList.remove('active');
-                painelPaciente.classList.remove('show', 'active');
-
-                // Adiciona classes ativas ao funcionário
-                tabFuncionario.classList.add('active');
-                painelFuncionario.classList.add('show', 'active');
-
-                // Atualiza atributos ARIA
-                tabFuncionario.setAttribute('aria-selected', 'true');
-                tabPaciente.setAttribute('aria-selected', 'false');
-            }
-
-            // Event listeners para os cliques
-            tabPaciente.addEventListener('click', function (e) {
-                e.preventDefault();
-                ativarTabPaciente();
-            });
-
-            tabFuncionario.addEventListener('click', function (e) {
-                e.preventDefault();
-                ativarTabFuncionario();
-            });
-
-            // Define o estado inicial (paciente ativo)
-            ativarTabPaciente();
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/sistema-login.js"></script>
 </body>
 
 </html>
