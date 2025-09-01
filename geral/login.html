@@ -42,43 +42,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Acesso ao Sistema</h2>
-
-                        <ul class="nav nav-tabs mb-4" id="userTypeTabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="paciente-tab" data-bs-toggle="tab"
-                                    data-bs-target="#paciente-pane" type="button" role="tab"
-                                    aria-controls="paciente-pane" aria-selected="true">Paciente</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="funcionario-tab" data-bs-toggle="tab"
-                                    data-bs-target="#funcionario-pane" type="button" role="tab"
-                                    aria-controls="funcionario-pane" aria-selected="false">Funcionário</button>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content" id="userTypeContent">
-                            <div class="tab-pane fade show active" id="paciente-pane" role="tabpanel"
-                                aria-labelledby="paciente-tab">
-                                <form id="loginPacienteForm">
-                                    <div class="mb-3">
-                                        <label for="emailPaciente" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="emailPaciente" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="passwordPaciente" class="form-label">Senha</label>
-                                        <input type="password" class="form-control" id="passwordPaciente" required>
-                                    </div>
-                                    <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-primary">Entrar</button>
-                                        <a href="/restrito/cadastro-pacientes.html" class="btn btn-outline-secondary">
-                                            Criar Conta de Paciente
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="tab-pane fade" id="funcionario-pane" role="tabpanel"
-                                aria-labelledby="funcionario-tab">
                                 <form id="loginFuncionarioForm">
                                     <div class="mb-3">
                                         <label for="emailFuncionario" class="form-label">Email Corporativo</label>
