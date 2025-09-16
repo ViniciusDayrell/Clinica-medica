@@ -1,6 +1,10 @@
 <?php
-  require "endereco.php";
-  require "conexaoMysql.php";
+  //require "endereco.php";
+  //require "conexaoMysql.php";
+  
+  require __DIR__ . '/endereco.php';
+  require __DIR__ . '/../../conexaoMysql.php';
+
   $pdo = mysqlConnect();
 
   $arrayEnderecos = Endereco::GetData($pdo);

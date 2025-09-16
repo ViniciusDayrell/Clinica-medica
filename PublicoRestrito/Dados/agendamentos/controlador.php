@@ -1,7 +1,7 @@
 <?php
 
-require "conexaoMysql.php";
-require "agendamento.php";
+require __DIR__ . '/agendamento.php';
+require __DIR__ . '/../../conexaoMysql.php';
 
 // resgata a ação a ser executada
 $acao = $_GET['acao'];

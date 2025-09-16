@@ -1,7 +1,7 @@
 <?php
 
-require "conexaoMysql.php";
-require "endereco.php";
+require __DIR__ . '/endereco.php'; 
+require __DIR__ . '/../../conexaoMysql.php';
 
 // resgata a ação a ser executada
 $acao = $_GET['acao'];
