@@ -2,10 +2,10 @@
 
 function mysqlConnect()
 {
-  $db_host = "sql109.infinityfree.com";
-  $db_username = "if0_35771761";
-  $db_password = "rQpubmCDA2f";
-  $db_name = "if0_35771761_trab_ppi";
+  $db_host = "localhost";
+  $db_username = "root";
+  $db_password = "";
+  $db_name = "clinicamedica";
 
   /*
   Criei um outro BD pq n sabia como mudar o antigo kk. Mas não mudei nada demais não, só
