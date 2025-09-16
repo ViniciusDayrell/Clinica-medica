@@ -1,6 +1,10 @@
 <?php
-  require "agendamentoMedico.php";
-  require "conexaoMysql.php";
+  //require "agendamentoMedico.php";
+  //require "conexaoMysql.php";
+  
+  require __DIR__ . '/agendamentoMedico.php';
+  require __DIR__ . '/../../conexaoMysql.php';
+  
   $pdo = mysqlConnect();
 
   session_start();

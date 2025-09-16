@@ -1,6 +1,9 @@
 <?php
-require 'funcionario.php';
-require 'conexaoMysql.php';
+//require 'funcionario.php';
+//require 'conexaoMysql.php';
+
+require __DIR__ . '/funcionario.php';
+require __DIR__ . '/../../conexaoMysql.php';
 
 $pdo = mysqlConnect();
 

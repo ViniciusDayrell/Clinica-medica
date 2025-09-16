@@ -1,6 +1,10 @@
 <?php
-  require "agendamento.php";
-  require "conexaoMysql.php";
+  //require "agendamento.php";
+  //require "conexaoMysql.php";
+  
+  require __DIR__ . '/agendamento.php';
+  require __DIR__ . '/../../conexaoMysql.php';
+  
   $pdo = mysqlConnect();
 
   $arrayAgendamentos = Agendamento::GetData($pdo);

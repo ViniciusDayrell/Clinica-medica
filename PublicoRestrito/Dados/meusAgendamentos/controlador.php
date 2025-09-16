@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require "conexaoMysql.php";
-require "agendamentoMedico.php";
+require __DIR__ . '/agendamentoMedico.php';
+require __DIR__ . '/../../conexaoMysql.php';
 
 // resgata a ação a ser executada
 $acao = $_GET['acao'];

@@ -1,6 +1,9 @@
 <?php
-require 'paciente.php';
-require 'conexaoMysql.php';
+//require 'paciente.php';
+//require 'conexaoMysql.php';
+
+require __DIR__ . '/paciente.php';
+require __DIR__ . '/../../conexaoMysql.php';
 
 $pdo = mysqlConnect();
 
