@@ -5,54 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1">
     <meta name="description" content="Página Principal da Clínica">
-    <link rel="stylesheet" href="styleHome.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="../css/stylePadrao.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clínica Médica COMP</title>
 </head>
 
 <body>
     <header>
         <div>
             <div class="item_header">
-                <img src="../imagens/logo2.jpg" alt="Logo Clínica" id="logo">
+                <img src="../imagens/logo1.png" alt="Logo Clínica" id="logo">
             </div>
 
         </div>
     </header>
-    <nav>
-        <div class="conteiner">
-            <div class="item">
-                <a href="../Galeria/Galeria.html">Galeria</a>
-            </div>
-            <div class="item">
-                <a href="../Agendamento/agendarConsulta.php">Agendar consulta</a>
-            </div>
-            <div class="item">
-                <a href="../Login/login.html">Login</a>
-            </div>
-            <div class="item">
-                <a href="../NovoEndereco/cadastra-endereco.php">Cadastro de endereço</a>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="../Home/Home.html">Home</a>
+                    <a class="nav-link" href="../Galeria/Galeria.html">Galerias</a>
+                    <a class="nav-link" href="../Agendamento/agendarConsulta.php">Agendamentos</a>
+                </div>
+                
+                <div class="navbar-nav">
+                    <a id="login-link" class="nav-link" href="../Login/login.html">Login</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <main>
         <article>
-            <h3>Bem vindo à Clínica</h3>
+            <h3>Bem vindo à COMP - Centro de Orientação Medica Popular</h3>
 
             <p class="paragrafo">Nosso objetivo é proporcionar cuidados de saúde de alta qualidade, aliando conhecimento
-                técnico à
-                empatia,
+                técnico à empatia,
                 para que você se sinta acolhido em todos os momentos. Aqui, a sua saúde é a nossa prioridade,
                 e contamos com uma equipe multidisciplinar de profissionais altamente qualificados,
                 comprometidos em oferecer atendimento personalizado e soluções eficazes para suas necessidades
                 individuais.</p>
-            <p class="paragrafo">Na Health Care, buscamos não apenas tratar sintomas, mas compreender as particularidades de cada paciente,
+            <p class="paragrafo">Na COMP - Centro de Orientação Medica Popular, buscamos não apenas tratar sintomas, mas compreender as particularidades de cada paciente,
                 promovendo uma abordagem holística. Nosso ambiente foi projetado para proporcionar conforto e
                 tranquilidade,
                 visando criar uma experiência positiva durante sua jornada em busca da saúde ideal.
                 Convidamos você a fazer parte da nossa comunidade, onde a excelência no atendimento e a dedicação à sua
                 saúde
-                são valores fundamentais. Seja bem-vindo à Clínica Health Care, onde cuidamos de você com comprometimento
+                são valores fundamentais. Seja bem-vindo à Clínica COMP, onde cuidamos de você com comprometimento
                 e carinho.</p>
 
         </article>
@@ -60,7 +67,7 @@
         <article>
             <h3>Nossos valores</h3>
 
-            <p class="paragrafo">Nossos valores na Clínica Health Care são a espinha dorsal que sustenta a excelência em nossos serviços e
+            <p class="paragrafo">Nossos valores na Clínica COMP são a espinha dorsal que sustenta a excelência em nossos serviços e
                 orienta
                 nossa atuação diária. Primamos pela integridade, colocando a ética e a transparência no centro de todas
                 as nossas interações,
@@ -70,7 +77,7 @@
                 e consideração.</p>
             <p class="paragrafo">A inovação é um valor que impulsiona nossos esforços, buscando constantemente novas abordagens e
                 tecnologias para aprimorar
-                a qualidade dos cuidados oferecidos. Na Health Care, valorizamos a colaboração e o trabalho em equipe,
+                a qualidade dos cuidados oferecidos. Na COMP, valorizamos a colaboração e o trabalho em equipe,
                 reconhecendo
                 que é através do compartilhamento de conhecimento e experiência que alcançamos os melhores resultados
                 para nossos pacientes.
@@ -85,6 +92,7 @@
         <address>Avenida João Naves de Ávila 2121, Santa Mônica, Uberlândia</address>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

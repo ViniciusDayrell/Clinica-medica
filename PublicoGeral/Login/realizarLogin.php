@@ -1,8 +1,5 @@
 <?php
 
-/*Talvez trocar o nome do arquivo seja melhor, pois não está cadastrando nenhum cliente,
-mas sim apenas logando*/
-
 class RequestResponse
 {
   public $success;

@@ -2,22 +2,38 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #444;
     line-height: 1.5rem;
-    /* width: 90%; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Para que o corpo se estenda até o final da página */
-
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #72b1a4;
+    background-color: white;
 }
 
-.conteiner {
+nav {
+    background-color: #28486D;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white; /* cor do texto dos links */
+}
+
+.navbar .btn {
+  background-color: #ffffff ;
+  color: #123456 ;
+  border: none;
+}
+
+.container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -41,11 +57,7 @@ a {
     text-decoration: none;
     color: black;
     font-size: large;
-    
 }
-
-
-
 
 .item a {
     text-align: center; /* Centraliza o texto horizontalmente */
@@ -59,41 +71,16 @@ main{
 h2,
 h3 {
     text-align: center;
-    color: #c4dbb4;
     font-weight: bold;
-}
-
-h1 {
-    color: #d4e2b6;
-    font-weight: bold;
-}
-
-.paragrafo {
-    text-indent: 30px;
-    font-weight: bold;
-}
-
-.texto {
-    margin: 50px;
-}
-
-#img {
-    width: 150px;
-    height: 150px;
-    text-align: center;
-}
-
-img {
-    mix-blend-mode: multiply;
 }
 
 #logo {
-    width: 300px;
+    width: 200px;
     margin-top: 0px;
 }
 
 footer{
-    background-color: #72b1a4;
+    background-color: #28486D;
     padding: 15px;
     display: flex;
     justify-content: center;

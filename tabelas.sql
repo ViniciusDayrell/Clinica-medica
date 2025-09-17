@@ -1,61 +1,48 @@
--- ==============================================
--- Tabela de Funcionários (área restrita, login)
--- ==============================================
+CREATE TABLE Pessoa (
+    Codigo INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Sexo ENUM('Masculino', 'Feminino', 'Outro'),
+    Email VARCHAR(100),
+    Telefone VARCHAR(20)
+);
+
 CREATE TABLE Funcionario (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
-    Senhahash VARCHAR(255) NOT NULL,
-    EstadoCivil VARCHAR(20),
-    DataNascimento DATE,
-    Funcao VARCHAR(50) NOT NULL
+    Codigo INT PRIMARY KEY,
+    DataContrato DATE,
+    Salario DECIMAL(10,2),
+    SenhaHash VARCHAR(100) NOT NULL,
+    FOREIGN KEY (Codigo) REFERENCES Pessoa(Codigo)
 );
 
--- ==============================================
--- Tabela de Médicos
--- ==============================================
 CREATE TABLE Medico (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Especialidade VARCHAR(100) NOT NULL,
-    CRM VARCHAR(30) UNIQUE NOT NULL
+    Codigo INT PRIMARY KEY,
+    Especialidade VARCHAR(100),
+    CRM VARCHAR(20),
+    FOREIGN KEY (Codigo) REFERENCES Funcionario(Codigo)
 );
 
--- ==============================================
--- Tabela de Pacientes (parte pública)
--- ==============================================
 CREATE TABLE Paciente (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Sexo ENUM('Masculino','Feminino','Outro') NOT NULL,
-    Email VARCHAR(100) NOT NULL,
-    Telefone VARCHAR(20) NOT NULL
+    Codigo INT PRIMARY KEY,
+    Peso DECIMAL(5,2),
+    Altura DECIMAL(5,2),
+    TipoSanguineo VARCHAR(5),
+    FOREIGN KEY (Codigo) REFERENCES Pessoa(Codigo)
 );
 
--- ==============================================
--- Tabela de Agendamentos (ligando Paciente e Médico)
--- ==============================================
-CREATE TABLE Agendamento (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    DataHora DATETIME NOT NULL,
-    IdMedico INT NOT NULL,
-    IdPaciente INT NOT NULL,
-    FOREIGN KEY (IdMedico) REFERENCES Medico(Id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
-    FOREIGN KEY (IdPaciente) REFERENCES Paciente(Id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+CREATE TABLE Endereco (
+    CEP VARCHAR(9),
+    Logradouro VARCHAR(200),
+    Cidade VARCHAR(100),
+    Estado VARCHAR(50)
 );
 
--- ==============================================
--- Tabela de Mensagens de Contato (parte pública)
--- ==============================================
-CREATE TABLE Contato (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) NOT NULL,
-    Telefone VARCHAR(20),
-    Mensagem TEXT NOT NULL,
-    DataHora TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE Agenda (
+    Codigo INT PRIMARY KEY AUTO_INCREMENT,
+    Data DATE,
+    Horario TIME,
+    Nome VARCHAR(100),
+    Sexo ENUM('Masculino', 'Feminino', 'Outro'),
+    Email VARCHAR(100),
+    CodigoMedico INT,
+    FOREIGN KEY (CodigoMedico) REFERENCES Medico(Codigo)
 );

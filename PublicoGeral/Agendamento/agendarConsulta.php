@@ -16,57 +16,68 @@ $especialidades = $stmt2->fetchAll();
 
 <head>
     <meta charset="UTF-8">
-    <title>Agendamento</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <meta name="description" content="Página Principal da Clínica">
+    <link rel="stylesheet" href="../css/stylePadrao.css">
+    <link rel="stylesheet" href="../css/styleForms.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clínica Médica COMP</title>
 </head>
-
 
 <body>
 
     <header>
-        <div class="item_header">
-            <img src="../imagens/logo2.jpg" alt="Logo Clínica" id="logo">
+        <div>
+            <div class="item_header">
+                <img src="../imagens/logo1.png" alt="Logo Clínica" id="logo">
+            </div>
+
         </div>
     </header>
 
-    <nav>
-        <div class="conteiner">
-            <div class="item">
-                <a href="../Home/Home.html">Home</a>
-            </div>
-            <div class="item">
-                <a href="../Galeria/Galeria.html">Galeria</a>
-            </div>
-            <div class="item">
-                <a href="../Login/login.html">Login</a>
-            </div>
-            <div class="item">
-                <a href="../NovoEndereco/cadastroEnderecos.html">Cadastro de endereço</a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="../Home/Home.html">Home</a>
+                    <a class="nav-link" href="../Galeria/Galeria.html">Galerias</a>
+                    <a class="nav-link" href="../Agendamento/agendarConsulta.php">Agendamentos</a>
+                </div>
+                
+                <div class="navbar-nav">
+                    <a id="login-link" class="nav-link" href="../Login/login.html">Login</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main>
+    <main class="container mt-5">
         <h2>Agendamento</h2>
 
-        <form name="consulta" action="cadastra-agendamento.php" method="post">
+        <form name="consulta" action="cadastra-agendamento.php" method="post" class="row g-4">
             <fieldset>
                 <legend>Dados Pessoais</legend>
 
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" minlength="2" maxlength="50" autofocus>
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" id="nome" class="form-control" name="nome" minlength="2" maxlength="50" autofocus>
                     <span></span>
                 </div>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" id="email" class="form-control" name="email">
                     <span></span>
                 </div>
-                <div>
-                    <label for="sexo">Sexo:</label>
-                    <select id="sexo" name="sexo">
+                <div class="col-md-3">
+                    <label for="sexo"  class="form-label">Sexo:</label>
+                    <select id="sexo" name="sexo" class="form-select">
                         <option value="" selected>Selecione</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
@@ -75,10 +86,10 @@ $especialidades = $stmt2->fetchAll();
             </fieldset>
 
             <fieldset>
-                <div>
+                <div class="col-md-6">
                     <!--Verificar por que o foreach repete duas vezes a especialidade-->
-                    <label for="especialidade"> Especialidade médica:</label>
-                    <select name="especialidade" id="especialidade">
+                    <label for="especialidade" class="form-label"> Especialidade médica:</label>
+                    <select name="especialidade" id="especialidade" class="form-select">
                         <option value="" selected>Selecione</option>
                         <?php foreach ($especialidades as $especialidade): ?>
                             <option value="<?= $especialidade['Especialidade']; ?>"><?= $especialidade['Especialidade']; ?>
@@ -86,9 +97,9 @@ $especialidades = $stmt2->fetchAll();
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <div>
-                    <label for="nomeMed">Nome médico:</label>
-                    <select name="nomeMed" id="nomeMed">
+                <div class="col-md-3">
+                    <label for="nomeMed" class="form-label">Nome médico:</label>
+                    <select name="nomeMed" id="nomeMed" class="form-select">
                         <option value="" selected>Selecione</option>
                         <?php foreach ($medicos as $medico): ?>
                             <option value="<?= htmlspecialchars($medico['Nome'], ENT_QUOTES, 'UTF-8'); ?>">
@@ -97,14 +108,14 @@ $especialidades = $stmt2->fetchAll();
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <div>
-                    <label for="data">Data consulta:</label>
-                    <input type="date" id="data" name="data">
+                <div class="col-md-3">
+                    <label for="data" class="form-label">Data consulta:</label>
+                    <input type="date" id="data" name="data" class="form-control">
                 </div>
-                <div>
+                <div class="col-md-3">
                     <!--Adicionar horario ao banco de dados-->
-                    <label for="horario">Horário:</label>
-                    <select name="horario" id="horario">
+                    <label for="horario" class="form-label">Horário:</label>
+                    <select name="horario" id="horario" class="form-select">
                         <option value="" selected>Selecione</option>
                         <option value="08:00:00">8:00</option>
                         <option value="09:00:00">9:00</option>
@@ -120,8 +131,10 @@ $especialidades = $stmt2->fetchAll();
                 </div>
             </fieldset>
 
-            <button type="submit" id="botao">Agendar</button>
-
+            <!-- Possivel erro por conta da div-->
+            <div class="col-12 justify-content-center d-flex">
+                <button type="submit" id="botao" class="btn btn-primary">Agendar</button>
+            </div>
         </form>
 
     </main>
@@ -198,6 +211,9 @@ $especialidades = $stmt2->fetchAll();
             selectEspecialidade.onchange = () => carregarMedicos();
         };
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 
