@@ -10,7 +10,7 @@ $pdo = mysqlConnect();
 $arrayFuncionarios = Funcionario::GetData($pdo);
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -53,6 +53,7 @@ $arrayFuncionarios = Funcionario::GetData($pdo);
         <th>Nome</th>
         <th>Data de Início</th>
         <th>Salário</th>
+        <th>Tipo</th>
       </tr>
 
       <?php
@@ -62,6 +63,7 @@ $arrayFuncionarios = Funcionario::GetData($pdo);
             <td>$funcionario->nome</td> 
             <td>$funcionario->dataContrato</td>
             <td>$funcionario->Salario</td>
+            <td>$funcionario->Tipo</td>
           </tr>      
         HTML;
       }
