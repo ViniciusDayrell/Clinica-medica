@@ -1,5 +1,4 @@
 <?php
 
-header("location: geral/index.html");
+header("location: PublicoGeral/Home/Home.html");
 exit();
-?>
