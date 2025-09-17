@@ -114,7 +114,7 @@ session_start();
                     </div>
                     <div>
                         <label for="data_inicio" class="form-label">Data de Início do Contrato</label>
-                        <input type="date" class="form-control" id="data_inicio" name="DataContrato" required>
+                        <input type="date" class="form-control" id="data_inicio" name="data_inicio" required>
                     </div>
                     <div>
                         <label for="salario" class="form-label">Salário</label>

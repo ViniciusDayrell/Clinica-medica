@@ -41,7 +41,7 @@ $stmt->execute([$nome, $sexo, $email, $telefone]);
 $codigo_pessoa = $pdo->lastInsertId();
 
 $sql = <<<SQL
-INSERT INTO Endereco (codigo_pessoa, CEP, Logradouro, Cidade, Estado)
+INSERT INTO Endereco (Codigo, CEP, Logradouro, Cidade, Estado)
 VALUES (?, ?, ?, ?, ?)
 SQL;
 
@@ -73,7 +73,7 @@ $sql = <<<SQL
   // Confirma a transação
   $pdo->commit();
   echo "Cadastro realizado com sucesso!";
-  header("location: cadastroFunc.html");
+  header("location: cadastroFuncionario.php");
   exit();
 } catch (PDOException $e) {
   // Caso ocorra algum erro, reverte a transação e exibe uma mensagem de erro

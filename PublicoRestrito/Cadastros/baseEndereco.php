@@ -14,7 +14,8 @@ class BaseEndereco
     }
 
 }
-
+// Captura o CEP enviado via query string
+// Estes são apenas alguns exemplos de CEPs válidos
 $cep = $_GET['cep'] ?? '';
 
 if ($cep == '38400-100'){
