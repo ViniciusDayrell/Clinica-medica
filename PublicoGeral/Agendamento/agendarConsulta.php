@@ -41,9 +41,9 @@ $especialidades = $stmt2->fetchAll();
             <div class="item">
                 <a href="../Login/login.html">Login</a>
             </div>
-            <div class="item">
+            <!--<div class="item">
                 <a href="../NovoEndereco/cadastroEnderecos.html">Cadastro de endereço</a>
-            </div>
+            </div>-->
         </div>
     </nav>
 

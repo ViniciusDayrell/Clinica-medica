@@ -59,12 +59,3 @@ catch (Exception $e) {
     exit('Falha ao cadastrar os dados: ' . $e->getMessage());
   }
 }
-/*catch (Exception $e) {
-  $pdo->rollBack();
-  if ($stmt1->errorInfo()[1] === 1062)
-    exit('Dados duplicados: ' . $e->getMessage());
-  else
-    exit('Falha ao cadastrar os dados: ' . $e->getMessage());
-}*/
-
-//NAO ESTA COMPLETAMENTE CERTO AINDA => Codigo de Agenda e Horario estao com erro

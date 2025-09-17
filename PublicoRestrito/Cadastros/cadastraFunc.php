@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Inicia uma transação
 $pdo->beginTransaction();
 
+// --- INSERÇÕES NO BANCO DE DADOS ---
+
 try {
   // Insere dados na tabela Pessoa
   $sql = <<<SQL
@@ -40,6 +42,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$nome, $sexo, $email, $telefone]);
 $codigo_pessoa = $pdo->lastInsertId();
 
+// Insere dados na tabela Endereco
 $sql = <<<SQL
 INSERT INTO Endereco (Codigo, CEP, Logradouro, Cidade, Estado)
 VALUES (?, ?, ?, ?, ?)
@@ -69,6 +72,8 @@ $sql = <<<SQL
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$codigo_pessoa, $especialidade, $crm]);
   }
+
+  // --- FIM DAS INSERÇÕES NO BANCO DE DADOS ---
 
   // Confirma a transação
   $pdo->commit();
