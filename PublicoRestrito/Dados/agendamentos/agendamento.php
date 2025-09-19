@@ -19,24 +19,6 @@ class Agendamento
 
   // Adiciona os dados do objeto (endereco)
   // na tabela endereco do banco de dados
- /* public function AddToDatabase($pdo)
-  {
-    try {
-      $sql = <<<SQL
-      -- Repare que a coluna Id foi omitida por ser auto_increment
-      INSERT INTO Agenda (Nome, Sexo, Data, Horario, CodigoMedico)
-      VALUES (?, ?, ?, ?, ?)
-      SQL;
-
-      // Neste caso utilize prepared statements para prevenir
-      // ataques do tipo S-Q-L Inj., pois precisamos
-      // cadastrar dados fornecidos pelo usuário 
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute([$this->nome, $this->sexo, $this->data, $this->hora, $this->codigoMed]);
-    } catch (Exception $e) {
-      exit('Falha inesperada: ' . $e->getMessage());
-    }
-  }*/
 
   // Método estático para retornar, na forma de um
   // array de objetos, os 30 enderecos iniciais da tabela.

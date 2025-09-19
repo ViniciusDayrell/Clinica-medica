@@ -1,4 +1,6 @@
 <?php
+// Busca todos os horários já agendados para aquele médico, naquela especialidade e data, e retorna em JSON
+        
 require "../conexaoMysql.php";
 $pdo = mysqlConnect();
 

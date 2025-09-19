@@ -53,8 +53,7 @@ $arrayPacientes = Paciente::GetData($pdo);
         </div>
     </nav>
 
-    <!-- Tinha class="'container" -->
-    <div>
+    <div class="container">
         <h3>Dados dos Pacientes</h3>
         <table class="table table-striped table-hover">
             <tr>
@@ -78,7 +77,7 @@ $arrayPacientes = Paciente::GetData($pdo);
             ?>
 
         </table>
-        <p><a href="../dados.php">Voltar para os dados</a></p>
+        <p><a class="btnSair" href="../dados.php">Voltar para os dados</a></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

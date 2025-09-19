@@ -12,28 +12,22 @@ class BaseEndereco
         $this->logradouro_base = $logradouro_base;
         $this->estado_base = $estado_base;
     }
-
 }
 // Captura o CEP enviado via query string
 // Estes são apenas alguns exemplos de CEPs válidos
 $cep = $_GET['cep'] ?? '';
 
-if ($cep == '38400-100'){
+if ($cep == '38400-100') {
     $response = new BaseEndereco('Uberlândia', 'Avenida Floriano Peixoto', 'MG');
-}
-else if($cep =='38405-322'){
+} else if ($cep == '38405-322') {
     $response = new BaseEndereco('Uberlândia', 'Avenida Levino de Souza', 'MG');
-}
-else if($cep =='38408-044'){
+} else if ($cep == '38408-044') {
     $response = new BaseEndereco('Uberlândia', 'Avenida José Zacharias Junqueira', 'MG');
-}
-else if($cep =='32809-327'){
+} else if ($cep == '32809-327') {
     $response = new BaseEndereco('Esmeraldas', 'Rua Uberaba', 'MG');
-}
-else if($cep =='38408-287'){
+} else if ($cep == '38408-287') {
     $response = new BaseEndereco('Uberlândia', 'Alameda Uberaba', 'MG');
-}
- else {
+} else {
     // Se o CEP não for igual a '38400-100', você precisa definir o $response como algo, senão o PHP gerará um erro.
     // Neste exemplo, estou definindo $response como nulo.
     $response = null;

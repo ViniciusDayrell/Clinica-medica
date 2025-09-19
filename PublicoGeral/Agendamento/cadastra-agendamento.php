@@ -9,8 +9,8 @@ $email = $_POST["email"] ?? "";
 $sexo = $_POST["sexo"] ?? "";
 $especialidade = $_POST["especialidade"] ?? "";
 $nomeMed = $_POST["nomeMed"] ?? "";
-$data = $_POST["data"] ?? ""; 
-$hora = $_POST["horario"] ?? ""; 
+$data = $_POST["data"] ?? "";
+$hora = $_POST["horario"] ?? "";
 
 // Obtenha o código do médico usando o nome e a especialidade
 $sqlMedico = <<<SQL
@@ -41,7 +41,12 @@ try {
 
   $stmt1 = $pdo->prepare($sql1);
   if (!$stmt1->execute([
-    $data, $hora, $nome, $sexo, $email, $codigoMed
+    $data,
+    $hora,
+    $nome,
+    $sexo,
+    $email,
+    $codigoMed
   ])) throw new Exception('Falha na primeira inserção');
 
   // Efetiva as operações
@@ -49,8 +54,7 @@ try {
 
   header("location: agendarConsulta.php");
   exit();
-} 
-catch (Exception $e) {
+} catch (Exception $e) {
   $pdo->rollBack();
   if ($stmt1) {
     $errorInfo = $stmt1->errorInfo();
@@ -59,12 +63,3 @@ catch (Exception $e) {
     exit('Falha ao cadastrar os dados: ' . $e->getMessage());
   }
 }
-/*catch (Exception $e) {
-  $pdo->rollBack();
-  if ($stmt1->errorInfo()[1] === 1062)
-    exit('Dados duplicados: ' . $e->getMessage());
-  else
-    exit('Falha ao cadastrar os dados: ' . $e->getMessage());
-}*/
-
-//NAO ESTA COMPLETAMENTE CERTO AINDA => Codigo de Agenda e Horario estao com erro

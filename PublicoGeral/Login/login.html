@@ -54,7 +54,6 @@
 
           <form id="cadastro" method="POST" action="realizarLogin.php" enctype="multipart/form-data">
               <fieldset>
-                  <!--<legend class="campo">Endereço de Entrega</legend>-->
                   <div class="mb-3">
                      <label for="email" class="form-label">E-mail:</label>
                       <input type="email" id="email" name="email" class="form-control">
@@ -68,9 +67,8 @@
                   
               </fieldset>
 
-              <!--<div class="d-grid"></div>-->
               <button id="botao" type="submit" class="btn btn-success">Entrar</button>
-              <div id = "sla" style="display: none;">
+              <div id="msgErro" style="display: none;">
                   <span>E-mail e/ou senha incorreta. Por favor, tente novamente.</span>
               </div>
 
@@ -90,6 +88,10 @@
     </footer>
 
      <script>
+      // Cria um objeto XMLHttpRequest (XHR), usado para enviar o formulário via AJAX.
+      // Pega a URL do action do formulário (realizarLogin.php) e configura a requisição como POST.
+      // Define que a resposta esperada será JSON.
+
         function sendForm(form) {
           
           let xhr = new XMLHttpRequest();
@@ -97,7 +99,9 @@
           xhr.open("POST", form.getAttribute("action"));
           xhr.responseType = 'json';
           
-    
+          // Define o que fazer quando a resposta for recebida
+          // Se o status for diferente de 200 ou a resposta for nula, exibe uma mensagem de erro no console.
+          // Se o login for bem-sucedido (loginResponse.success é true), redireciona para a página indicada em loginResponse.detail.
           xhr.onload = function () {
             if (xhr.status != 200 || xhr.response === null) {
               console.log("A resposta não pode ser obtida ");
@@ -109,7 +113,7 @@
             if (loginResponse.success)
               window.location = loginResponse.detail;
             if(loginResponse.success == false){
-              document.querySelector("#sla").style.display = 'block';
+              document.querySelector("#msgErro").style.display = 'block';
               form.senha.value = "";
               form.senha.focus();
             }
@@ -133,6 +137,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 
 </html>
