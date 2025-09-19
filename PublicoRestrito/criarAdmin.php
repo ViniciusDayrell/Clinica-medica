@@ -28,7 +28,7 @@ if (basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])) {
     $stmt->execute([$nome, $sexo, $email, $telefone]);
     $codigo = $pdo->lastInsertId();
 
-    // Inserir na tabela Funcionario - USANDO VARIÁVEL PHP EM VEZ DE CURDATE()
+    // Inserir na tabela Funcionario
     $sqlFunc = "INSERT INTO Funcionario (Codigo, DataContrato, Salario, SenhaHash) VALUES (?, ?, 5000.00, ?)";
     $stmt = $pdo->prepare($sqlFunc);
     $stmt->execute([$codigo, $dataAtual, $senhaHash]);
