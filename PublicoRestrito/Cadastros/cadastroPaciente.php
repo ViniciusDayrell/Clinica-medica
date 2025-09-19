@@ -41,7 +41,7 @@ session_start();
                 </div>
 
                 <div class="navbar-nav">
-                    <a id="login-link" class="nav-link" href="../PublicoGeral/Login/logout.php">SAIR</a>
+                    <a id="login-link" class="nav-link" href="../../PublicoGeral/Login/logout.php">SAIR</a>
                 </div>
             </div>
         </div>
