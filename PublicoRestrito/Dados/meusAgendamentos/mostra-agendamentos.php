@@ -1,58 +1,62 @@
 <?php
-  //require "agendamentoMedico.php";
-  //require "conexaoMysql.php";
-  
-  require __DIR__ . '/agendamentoMedico.php';
-  require __DIR__ . '/../../conexaoMysql.php';
-  
-  $pdo = mysqlConnect();
+require __DIR__ . '/agendamentoMedico.php';
+require __DIR__ . '/../../conexaoMysql.php';
 
-  session_start();
-  $email = $_SESSION['user'];
+$pdo = mysqlConnect();
 
-  $arrayAgendamentosMedico = AgendamentoMedico::GetData($pdo, $email);
+session_start();
+$email = $_SESSION['user'];
+
+$arrayAgendamentosMedico = AgendamentoMedico::GetData($pdo, $email);
 ?>
 
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <!-- 1: Tag de responsividade -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agenda</title>
-
-  <!-- 2: Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial scale=1">
+  <meta name="description" content="Clínica Comp - Agendamentos">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/stylePadrao.css">
+  <link rel="stylesheet" href="../../css/styleTabela.css">
+  <title>Clínica Médica COMP - Agendamentos"></title>
 </head>
 
 <body>
   <header>
-    <div class="item_header">
-      <img src="../imagens/logo2.jpg" alt="Logo Clínica" id="logo">
+    <div>
+      <div class="item_header">
+        <img src="../../imagens/logo1.png" alt="Logo Clínica" id="logo">
+      </div>
     </div>
   </header>
 
-  <nav>
-    <div class="conteiner">
-      <div class="item">
-        <a href="../../homeRestrito.php">Home</a>
-      </div>
-      <div class="item">
-        <a href="../../Cadastros/cadastroFuncionario.php">Cadastro de Funcionarios</a>
-      </div>
-      <div class="item">
-        <a href="../../Cadastros/cadastroPaciente.php">Cadastro de Pacientes</a>
-      </div>
-      <div class="item">
-        <a href="../dados.php">Listagem de Dados</a>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav me-auto">
+          <a class="nav-link" href="../../homeRestrito.php">Home</a>
+          <a class="nav-link" href="../../Cadastros/cadastroFuncionario.php">Cadastro de Funcionarios</a>
+          <a class="nav-link" href="../../Cadastros/cadastroPaciente.php">Cadastro de Pacientes</a>
+          <a class="nav-link" href="../../Dados/dados.php">Listagem de Dados</a>
+        </div>
+
+        <div class="navbar-nav">
+          <a id="login-link" class="nav-link" href="../../../PublicoGeral/Login/logout.php">SAIR</a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div>
     <h3>Agendamentos</h3>
     <table class="table table-striped table-hover">
       <tr>
@@ -83,6 +87,7 @@
     <p><a href="../dados.php">Voltar para os dados</a></p>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

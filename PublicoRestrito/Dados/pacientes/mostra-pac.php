@@ -1,7 +1,4 @@
 <?php
-//require 'paciente.php';
-//require 'conexaoMysql.php';
-
 require __DIR__ . '/paciente.php';
 require __DIR__ . '/../../conexaoMysql.php';
 
@@ -14,39 +11,50 @@ $arrayPacientes = Paciente::GetData($pdo);
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dados dos Pacientes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <meta name="description" content="Clínica Comp - Pacientes">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/stylePadrao.css">
+    <link rel="stylesheet" href="../../css/styleTabela.css">
+    <title>Clínica Médica COMP - Pacientes</title>
 </head>
 
 <body>
     <header>
-        <div class="item_header">
-            <img src="../imagens/logo2.jpg" alt="Logo Clínica" id="logo">
+        <div>
+            <div class="item_header">
+                <img src="../../imagens/logo1.png" alt="Logo Clínica" id="logo">
+            </div>
         </div>
     </header>
 
-    <nav>
-        <div class="conteiner">
-            <div class="item">
-                <a href="../../homeRestrito.php">Home</a>
-            </div>
-            <div class="item">
-                <a href="../../Cadastros/cadastroFuncionario.php">Cadastro de Funcionarios</a>
-            </div>
-            <div class="item">
-                <a href="../../Cadastros/cadastroPaciente.php">Cadastro de Pacientes</a>
-            </div>
-            <div class="item">
-                <a href="../dados.php">Listagem de Dados</a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link" href="../../homeRestrito.php">Home</a>
+                    <a class="nav-link" href="../../Cadastros/cadastroFuncionario.php">Cadastro de Funcionarios</a>
+                    <a class="nav-link" href="../../Cadastros/cadastroPaciente.php">Cadastro de Pacientes</a>
+                    <a class="nav-link" href="../../Dados/dados.php">Listagem de Dados</a>
+                </div>
+
+                <div class="navbar-nav">
+                    <a id="login-link" class="nav-link" href="../../../PublicoGeral/Login/logout.php">SAIR</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <!-- Tinha class="'container" -->
+    <div>
         <h3>Dados dos Pacientes</h3>
         <table class="table table-striped table-hover">
             <tr>
@@ -73,6 +81,7 @@ $arrayPacientes = Paciente::GetData($pdo);
         <p><a href="../dados.php">Voltar para os dados</a></p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

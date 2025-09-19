@@ -6,23 +6,23 @@ $pdo = mysqlConnect();
 // Verifica se o método de requisição é POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Captura os valores dos campos do formulário
-  $nome = $_POST['nome'];
-  $sexo = $_POST['sexo'];
-  $email = $_POST['email'];
-  $telefone = $_POST['telefone'];
-  $cep = $_POST['cep'];
-  $logradouro = $_POST['logradouro'];
-  $cidade = $_POST['cidade'];
-  $estado = $_POST['estado'];
-  $data_inicio = $_POST['data_inicio'];
-  $salario = $_POST['salario'];
-  $senha = $_POST['senha'];
-  $cargo = $_POST['cargo'];
+  $nome = $_POST['nome'] ?? "";
+  $sexo = $_POST['sexo'] ?? "";
+  $email = $_POST['email'] ?? "";
+  $telefone = $_POST['telefone'] ?? "";
+  $cep = $_POST['cep'] ?? "";
+  $logradouro = $_POST['logradouro'] ?? "";
+  $cidade = $_POST['cidade'] ?? "";
+  $estado = $_POST['estado'] ?? "";
+  $data_inicio = $_POST['data_inicio'] ?? "";
+  $salario = $_POST['salario'] ?? "";
+  $senha = $_POST['senha'] ?? "";
+  $cargo = $_POST['cargo'] ?? "";
 
   // Verifica se o cargo selecionado é "Funcionário Médico" para capturar os campos adicionais
   if ($cargo == "medico") {
-    $especialidade = $_POST['especialidade'];
-    $crm = $_POST['crm'];
+    $especialidade = $_POST['especialidade'] ?? "";
+    $crm = $_POST['crm'] ?? "";
   }
 }
 
@@ -36,21 +36,21 @@ try {
   VALUES (?, ?, ?, ?)
   SQL;
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$nome, $sexo, $email, $telefone]);
-$codigo_pessoa = $pdo->lastInsertId();
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$nome, $sexo, $email, $telefone]);
+  $codigo_pessoa = $pdo->lastInsertId();
 
-$sql = <<<SQL
+  $sql = <<<SQL
 INSERT INTO Endereco (Codigo, CEP, Logradouro, Cidade, Estado)
 VALUES (?, ?, ?, ?, ?)
 SQL;
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$codigo_pessoa, $cep, $logradouro, $cidade,$estado]);
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([$codigo_pessoa, $cep, $logradouro, $cidade, $estado]);
 
 
-// Insere dados na tabela Funcionario
-$sql = <<<SQL
+  // Insere dados na tabela Funcionario
+  $sql = <<<SQL
       INSERT INTO Funcionario (Codigo, DataContrato, Salario, SenhaHash)
       VALUES (?, ?, ?, ?)
   SQL;

@@ -17,12 +17,6 @@ class Funcionario
   public static function GetData($pdo)
   {
     try {
-      /*$sql = <<<SQL
-      SELECT Nome, DataContrato, Salario
-      FROM Pessoa JOIN Funcionario ON Funcionario.Codigo = Pessoa.Codigo
-      LEFT JOIN Medico ON Funcionario.Codigo = Medico.Codigo
-      SQL;*/
-
        $sql = <<<SQL
       SELECT Pessoa.Nome, Funcionario.DataContrato, Funcionario.Salario,
              CASE WHEN Medico.Codigo IS NOT NULL THEN 'Médico' ELSE 'Comum' END AS Tipo

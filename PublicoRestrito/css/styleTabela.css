@@ -1,0 +1,10 @@
+.btnSair {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+.btnSair:hover {
+    color: darkred;
+    text-decoration: underline;
+}

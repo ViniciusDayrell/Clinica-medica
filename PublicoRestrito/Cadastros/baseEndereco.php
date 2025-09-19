@@ -39,8 +39,7 @@ else if($cep =='38408-287'){
     $response = null;
 }
 
-// Certifique-se de que o $response foi inicializado antes de tentar acessá-lo.
-// Além disso, é uma boa prática verificar se o cabeçalho Content-Type é definido como JSON.
+// Define o cabeçalho da resposta como JSON
 header('Content-Type: application/json');
 
 echo json_encode($response);
