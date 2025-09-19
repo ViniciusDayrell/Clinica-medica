@@ -10,7 +10,7 @@ CREATE TABLE Funcionario (
     Codigo INT PRIMARY KEY,
     DataContrato DATE,
     Salario DECIMAL(10,2),
-    SenhaHash VARCHAR(100) NOT NULL,
+    SenhaHash VARCHAR(255) NOT NULL,
     FOREIGN KEY (Codigo) REFERENCES Pessoa(Codigo)
 );
 
@@ -30,10 +30,12 @@ CREATE TABLE Paciente (
 );
 
 CREATE TABLE Endereco (
+    Codigo INT PRIMARY KEY,
     CEP VARCHAR(9),
     Logradouro VARCHAR(200),
     Cidade VARCHAR(100),
-    Estado VARCHAR(50)
+    Estado VARCHAR(50),
+    FOREIGN KEY (Codigo) REFERENCES Pessoa(Codigo)
 );
 
 CREATE TABLE Agenda (

@@ -6,28 +6,33 @@ $pdo = mysqlConnect();
 // Verifica se o método de requisição é POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Captura os valores dos campos do formulário
-  $nome = $_POST['nome'] ?? "";
-  $sexo = $_POST['sexo'] ?? "";
-  $email = $_POST['email'] ?? "";
-  $telefone = $_POST['telefone'] ?? "";
-  $cep = $_POST['cep'] ?? "";
-  $logradouro = $_POST['logradouro'] ?? "";
-  $cidade = $_POST['cidade'] ?? "";
-  $estado = $_POST['estado'] ?? "";
-  $data_inicio = $_POST['data_inicio'] ?? "";
-  $salario = $_POST['salario'] ?? "";
-  $senha = $_POST['senha'] ?? "";
-  $cargo = $_POST['cargo'] ?? "";
+  $nome = $_POST['nome'] ?? '';
+  $sexo = $_POST['sexo'] ?? '';
+  $email = $_POST['email'] ?? '';
+  $telefone = $_POST['telefone'] ?? '';
+  $cep = $_POST['cep'] ?? '';
+  $logradouro = $_POST['logradouro'] ?? '';
+  $cidade = $_POST['cidade'] ?? '';
+  $estado = $_POST['estado'] ?? '';
+  $data_inicio = $_POST['data_inicio'] ?? '';
+  $salario = $_POST['salario'] ?? '';
+  $senha = $_POST['senha'] ?? '';
+  $cargo = $_POST['cargo'] ?? '';
+
+  // *** ALTERAÇÃO IMPORTANTE: Gera o hash da senha antes de armazenar ***
+  $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
   // Verifica se o cargo selecionado é "Funcionário Médico" para capturar os campos adicionais
   if ($cargo == "medico") {
-    $especialidade = $_POST['especialidade'] ?? "";
-    $crm = $_POST['crm'] ?? "";
+    $especialidade = $_POST['especialidade'] ?? '';
+    $crm = $_POST['crm'] ?? '';
   }
 }
 
 // Inicia uma transação
 $pdo->beginTransaction();
+
+// --- INSERÇÕES NO BANCO DE DADOS ---
 
 try {
   // Insere dados na tabela Pessoa
@@ -40,6 +45,7 @@ try {
   $stmt->execute([$nome, $sexo, $email, $telefone]);
   $codigo_pessoa = $pdo->lastInsertId();
 
+  // Insere dados na tabela Endereco
   $sql = <<<SQL
 INSERT INTO Endereco (Codigo, CEP, Logradouro, Cidade, Estado)
 VALUES (?, ?, ?, ?, ?)
@@ -50,12 +56,13 @@ SQL;
 
 
   // Insere dados na tabela Funcionario
+  // *** ALTERAÇÃO IMPORTANTE: Usa a variável $senhaHash em vez de $senha ***
   $sql = <<<SQL
       INSERT INTO Funcionario (Codigo, DataContrato, Salario, SenhaHash)
       VALUES (?, ?, ?, ?)
   SQL;
   $stmt = $pdo->prepare($sql);
-  $stmt->execute([$codigo_pessoa, $data_inicio, $salario, $senha]);
+  $stmt->execute([$codigo_pessoa, $data_inicio, $salario, $senhaHash]);
 
   // Se o cargo for "medico", insere dados na tabela Medico
   if ($cargo == "medico") {
@@ -69,6 +76,8 @@ SQL;
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$codigo_pessoa, $especialidade, $crm]);
   }
+
+  // --- FIM DAS INSERÇÕES NO BANCO DE DADOS ---
 
   // Confirma a transação
   $pdo->commit();
