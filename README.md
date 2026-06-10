@@ -83,6 +83,18 @@ O banco de dados foi organizado em entidades relacionadas que representam as pri
 
 A estrutura utiliza chaves primárias, chaves estrangeiras e relacionamentos entre as tabelas para manter a associação entre pessoas, funcionários, médicos, pacientes, endereços e agendamentos.
 
+## 🔐 Autenticação e segurança
 
+O projeto implementa diferentes mecanismos para proteger os dados e a área administrativa:
 
+- armazenamento de senhas por meio de `password_hash`;
+- verificação das credenciais com `password_verify`;
+- consultas preparadas com PDO;
+- desativação da emulação de prepared statements;
+- controle de acesso por sessão;
+- cookie de sessão configurado como `HttpOnly`;
+- transações nas operações que inserem dados em várias tabelas;
+- tratamento de falhas com confirmação ou reversão da transação;
+- escape de dados exibidos nas listagens;
+- redirecionamento de usuários não autenticados para a página de login.
 
