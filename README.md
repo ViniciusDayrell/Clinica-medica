@@ -160,6 +160,31 @@ clinica-medica-ufu/
 - `tabelas.sql`: criação da estrutura relacional do banco de dados;
 - `index.php`: ponto inicial que encaminha o visitante para a página pública.
 
+## 🚀 Como executar
+
+### Pré-requisitos
+
+Para executar o projeto localmente, é necessário possuir:
+
+- servidor web com suporte a PHP;
+- MySQL ou MariaDB;
+- navegador atualizado;
+- ambiente local como XAMPP, WampServer, MAMP ou uma configuração equivalente.
+
+### Configuração
+
+1. Coloque a pasta do projeto no diretório servido pelo seu ambiente PHP.
+2. Crie um banco de dados no MySQL.
+3. Execute o arquivo `tabelas.sql` para criar as tabelas necessárias.
+4. Configure os dados de conexão nos arquivos:
+   - `PublicoGeral/conexaoMysql.php`;
+   - `PublicoRestrito/conexaoMysql.php`.
+5. Inicie o servidor web e o serviço do banco de dados.
+6. Acesse a pasta do projeto pelo navegador. O arquivo `index.php` encaminhará a aplicação para a página inicial.
+7. Quando necessário, utilize o script `PublicoRestrito/criarAdmin.php` apenas para inicializar o primeiro acesso administrativo.
+
+> **Importante:** depois da criação inicial do administrador, remova ou desative o arquivo `criarAdmin.php`, altere as credenciais padrão e não mantenha senhas ou dados reais de conexão diretamente no código. Em uma implantação, prefira variáveis de ambiente.
+
 
 
 
