@@ -1,6 +1,6 @@
 # 🏥 Clínica Médica COMP
 
-> Projeto final desenvolvido para a disciplina de Desenvolvimento Web 1, cursada no sexto período do curso de Sistemas de Informação da Universidade Federal de Uberlândia (UFU).
+> Projeto final acadêmico desenvolvido para a disciplina de Desenvolvimento Web 1, cursada no sexto período do curso de Sistemas de Informação da Universidade Federal de Uberlândia (UFU).
 
 ![PHP](https://img.shields.io/badge/PHP-72.3%25-777BB4?style=flat)
 ![HTML](https://img.shields.io/badge/HTML-15.4%25-E34F26?style=flat)
@@ -67,4 +67,22 @@ O projeto integra interface web, regras de negócio em PHP e persistência de da
 - **JavaScript:** validações, redirecionamentos e requisições assíncronas;
 - **Bootstrap 5:** componentes visuais e adaptação das páginas a diferentes tamanhos de tela;
 - **JSON:** comunicação entre os scripts PHP e o JavaScript nas consultas dinâmicas.
+
+## 🗃️ Banco de dados
+
+O banco de dados foi organizado em entidades relacionadas que representam as principais informações utilizadas pela aplicação.
+
+| Tabela | Finalidade |
+|---|---|
+| `Pessoa` | Armazena os dados pessoais compartilhados por funcionários e pacientes. |
+| `Funcionario` | Registra dados profissionais e a senha de acesso dos funcionários. |
+| `Medico` | Complementa o cadastro do funcionário com especialidade e CRM. |
+| `Paciente` | Armazena peso, altura e tipo sanguíneo do paciente. |
+| `Endereco` | Registra CEP, logradouro, cidade e estado de uma pessoa. |
+| `Agenda` | Armazena as consultas, incluindo paciente, data, horário e médico responsável. |
+
+A estrutura utiliza chaves primárias, chaves estrangeiras e relacionamentos entre as tabelas para manter a associação entre pessoas, funcionários, médicos, pacientes, endereços e agendamentos.
+
+
+
 
