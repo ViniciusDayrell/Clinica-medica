@@ -185,6 +185,27 @@ Para executar o projeto localmente, é necessário possuir:
 
 > **Importante:** depois da criação inicial do administrador, remova ou desative o arquivo `criarAdmin.php`, altere as credenciais padrão e não mantenha senhas ou dados reais de conexão diretamente no código. Em uma implantação, prefira variáveis de ambiente.
 
+## 🧩 Decisões de implementação
+
+### Agendamento dinâmico
+
+A tela de agendamento utiliza requisições assíncronas para consultar o servidor sem recarregar toda a página. A especialidade escolhida filtra a lista de médicos e, posteriormente, a combinação de médico e data determina os horários indisponíveis.
+
+### Cadastros relacionados
+
+Funcionários e pacientes compartilham informações da tabela `Pessoa`. Por isso, os cadastros utilizam transações para inserir os dados pessoais e, em seguida, registrar as informações específicas nas tabelas correspondentes.
+
+No cadastro de um médico, a aplicação também inclui especialidade e CRM na tabela `Medico`.
+
+### Controle de acesso
+
+O login consulta o funcionário pelo e-mail, verifica a senha armazenada e cria a sessão utilizada pelas páginas internas. As rotas restritas verificam essa sessão antes de exibir o conteúdo.
+
+### Consultas administrativas
+
+As páginas da área interna recuperam os registros do banco e os apresentam em tabelas separadas por categoria. Médicos autenticados também possuem uma consulta específica que utiliza o e-mail da sessão para localizar apenas os agendamentos relacionados ao profissional.
+
+
 
 
 
