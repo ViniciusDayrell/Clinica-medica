@@ -46,3 +46,25 @@ O projeto integra interface web, regras de negócio em PHP e persistência de da
 - visualização dos próprios agendamentos pelo médico autenticado;
 - encerramento da sessão por logout.
 
+## 🔄 Fluxo da aplicação
+
+1. O acesso à raiz do projeto redireciona o visitante para a página inicial pública.
+2. O visitante pode navegar pela página inicial, visualizar a galeria ou acessar o agendamento.
+3. Durante o agendamento, a especialidade selecionada determina quais médicos serão exibidos.
+4. Após a escolha do médico e da data, a aplicação consulta os horários já ocupados e mantém disponíveis apenas os demais.
+5. Funcionários acessam a área interna por meio da página de login.
+6. Após a autenticação, uma sessão é criada e o usuário é direcionado ao painel restrito.
+7. Na área interna, é possível cadastrar funcionários e pacientes, além de consultar os dados armazenados.
+8. Quando o funcionário autenticado é um médico, a opção de consultar os próprios agendamentos também é disponibilizada.
+
+## 🛠️ Tecnologias utilizadas
+
+- **PHP:** processamento no servidor, autenticação, sessões, regras de negócio e acesso ao banco de dados;
+- **MySQL:** armazenamento das informações da clínica;
+- **PDO:** conexão com o banco e execução de consultas preparadas;
+- **HTML:** estrutura das páginas e dos formulários;
+- **CSS:** estilização das áreas pública e restrita;
+- **JavaScript:** validações, redirecionamentos e requisições assíncronas;
+- **Bootstrap 5:** componentes visuais e adaptação das páginas a diferentes tamanhos de tela;
+- **JSON:** comunicação entre os scripts PHP e o JavaScript nas consultas dinâmicas.
+
