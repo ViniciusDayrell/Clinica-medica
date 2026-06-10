@@ -205,7 +205,22 @@ O login consulta o funcionário pelo e-mail, verifica a senha armazenada e cria 
 
 As páginas da área interna recuperam os registros do banco e os apresentam em tabelas separadas por categoria. Médicos autenticados também possuem uma consulta específica que utiliza o e-mail da sessão para localizar apenas os agendamentos relacionados ao profissional.
 
+## 🎓 Contexto acadêmico
 
+O projeto reúne conceitos estudados ao longo da disciplina de Desenvolvimento Web 1, incluindo:
+
+- construção de páginas responsivas;
+- formulários HTML;
+- estilização com CSS;
+- manipulação do DOM;
+- requisições assíncronas;
+- desenvolvimento server-side com PHP;
+- autenticação e sessões;
+- integração com banco de dados relacional;
+- consultas preparadas;
+- modelagem de dados;
+- operações de cadastro e consulta;
+- organização de uma aplicação em áreas pública e restrita.
 
 
 
