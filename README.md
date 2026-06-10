@@ -1,10 +1,11 @@
-O projeto envolve o desenvolvimento de um website para uma clínica médica pública.
-Desta forma, o projeto trabalho com duas partes, uma aberta a qualquer público e outra restrita apenas para o acesso de funcionários, sendo eles comum ou médico.
-Por fim, o trabalho possui duas pastas importantes, onde concentra o funcionamento do site como um todo:
+````markdown
+# 🏥 Clínica Médica COMP
 
-PublicoGeral ---> Pasta criada onde irá guardar todas as páginas de acesso público
+> Projeto final desenvolvido para a disciplina de Desenvolvimento Web 1, cursada no sexto período do curso de Sistemas de Informação da Universidade Federal de Uberlândia (UFU).
 
-PublicoRestrito ---> Pasta criada onde irá guardar todas as páginas de acesso restrito a funcionários
-
-
+![PHP](https://img.shields.io/badge/PHP-72.3%25-777BB4?style=flat)
+![HTML](https://img.shields.io/badge/HTML-15.4%25-E34F26?style=flat)
+![CSS](https://img.shields.io/badge/CSS-10.0%25-1572B6?style=flat)
+![JavaScript](https://img.shields.io/badge/JavaScript-2.3%25-F7DF1E?style=flat)
+![SQL](https://img.shields.io/badge/SQL-008080?style=flat)
 
