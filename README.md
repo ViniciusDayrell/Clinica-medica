@@ -16,4 +16,33 @@ Na área pública, o usuário pode conhecer a clínica, acessar a galeria de ima
 
 O projeto integra interface web, regras de negócio em PHP e persistência de dados em MySQL, contemplando desde a navegação pública até o controle de acesso por sessão.
 
+## ✨ Funcionalidades
+
+### Área pública
+
+- Página inicial institucional da clínica;
+- galeria de imagens das instalações;
+- formulário para agendamento de consultas;
+- seleção de médicos por especialidade;
+- carregamento dinâmico dos médicos disponíveis;
+- consulta dos horários já ocupados para determinado médico e data;
+- bloqueio dos horários indisponíveis no formulário;
+- acesso à página de login dos funcionários.
+
+### Área restrita
+
+- Autenticação de funcionários por e-mail e senha;
+- proteção das páginas internas por sessão;
+- identificação do funcionário autenticado;
+- diferenciação entre funcionários comuns e médicos;
+- cadastro de funcionários;
+- cadastro adicional de especialidade e CRM quando o funcionário é médico;
+- cadastro de pacientes;
+- armazenamento de endereço, dados pessoais e informações clínicas;
+- listagem de funcionários;
+- listagem de pacientes;
+- listagem de endereços;
+- listagem geral de agendamentos;
+- visualização dos próprios agendamentos pelo médico autenticado;
+- encerramento da sessão por logout.
 
