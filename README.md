@@ -98,3 +98,68 @@ O projeto implementa diferentes mecanismos para proteger os dados e a área admi
 - escape de dados exibidos nas listagens;
 - redirecionamento de usuários não autenticados para a página de login.
 
+## 📁 Estrutura do projeto
+
+```text
+clinica-medica-ufu/
+├── .vscode/
+├── PublicoGeral/
+│   ├── Agendamento/
+│   │   ├── agendarConsulta.php
+│   │   ├── cadastra-agendamento.php
+│   │   ├── horarios-disponiveis.php
+│   │   └── medicos-por-especialidade.php
+│   ├── Galeria/
+│   │   └── Galeria.html
+│   ├── Home/
+│   │   └── Home.html
+│   ├── Login/
+│   │   ├── login.html
+│   │   ├── logout.php
+│   │   ├── realizarLogin.php
+│   │   └── redirecionamentoLogin.js
+│   ├── css/
+│   ├── imagens/
+│   └── conexaoMysql.php
+├── PublicoRestrito/
+│   ├── Cadastros/
+│   │   ├── cadastroFuncionario.php
+│   │   ├── cadastroPaciente.php
+│   │   ├── cadastraFunc.php
+│   │   ├── cadastra-pac.php
+│   │   ├── baseEndereco.php
+│   │   └── script.js
+│   ├── Dados/
+│   │   ├── agendamentos/
+│   │   ├── endereco/
+│   │   ├── funcionarios/
+│   │   ├── meusAgendamentos/
+│   │   ├── pacientes/
+│   │   ├── dados.php
+│   │   └── redirecionamento.js
+│   ├── css/
+│   ├── imagens/
+│   ├── conexaoMysql.php
+│   ├── criarAdmin.php
+│   ├── homeRestrito.php
+│   └── sessionVerification.php
+├── Sql/
+├── index.php
+├── tabelas.sql
+└── README.md
+```
+
+### Organização das áreas
+
+- `PublicoGeral`: páginas que podem ser acessadas por visitantes, incluindo home, galeria, agendamento e login;
+- `PublicoRestrito`: painel interno protegido por autenticação;
+- `Cadastros`: formulários e scripts responsáveis pela inclusão de funcionários e pacientes;
+- `Dados`: classes, consultas e páginas de listagem;
+- `css`: estilos separados conforme a finalidade das páginas;
+- `imagens`: recursos visuais utilizados pela interface;
+- `tabelas.sql`: criação da estrutura relacional do banco de dados;
+- `index.php`: ponto inicial que encaminha o visitante para a página pública.
+
+
+
+
